@@ -1,0 +1,190 @@
+<nz-tabset>
+<nz-tab nzTitle="Docking1">
+    <form nz-form class="form" [formGroup]="dockingForm" (submit)="submitForm($event, dockingForm.value)">
+      <!-- <div nz-row> -->
+        
+        <!-- <div nz-col nzSpan="12"> -->
+          <!-- <nz-form-item>
+            <nz-form-label [nzSpan]="8" nzRequired>Job name</nz-form-label>
+            <nz-form-control [nzSpan]="7">
+              <input nz-input formControlName="username" placeholder="请输入任务名称">
+              <nz-form-explain *ngIf="dockingForm.get('username').dirty && dockingForm.get('username').errors || dockingForm.get('username').pending">
+                请输入任务名称！
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item> -->
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>任务名称</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <input nz-input formControlName="work_name" placeholder="请输入任务名称">
+          <nz-form-explain *ngIf="dockingForm.get('work_name').dirty && dockingForm.get('work_name').errors || dockingForm.get('work_name').pending">
+           请输入任务名称！
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>电子邮箱</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <input nz-input  formControlName="work_decs" placeholder="xxxx@sina.com">
+          <nz-form-explain *ngIf="dockingForm.get('work_decs').dirty&&dockingForm.get('work_decs').hasError('required')">
+            xxxx@sina.com
+          </nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <!--<nz-form-item>-->
+        <!--<nz-form-label [nzSpan]="8" [nzRequired]>分子库</nz-form-label>-->
+        <!--<nz-form-control [nzSpan]="7">-->
+          <!--<nz-select formControlName="mol_db">-->
+            <!--<nz-option nzLabel="zinc" nzValue=1></nz-option>-->
+            <!--<nz-option nzLabel="chembl" nzValue=2></nz-option>-->
+            <!--<nz-option nzLabel="wi" nzValue=3></nz-option>-->
+          <!--</nz-select>-->
+          <!--<nz-form-explain></nz-form-explain>-->
+        <!--</nz-form-control>-->
+      <!--</nz-form-item>-->
+      <!-- <nz-form-item>
+        <nz-form-label [nzSpan]="8">靶点空间位置</nz-form-label>
+      </nz-form-item> -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8">确定活性位点</nz-form-label>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8">靶点空间位置</nz-form-label>
+      </nz-form-item>
+      <div nz-row >
+        <div nz-col nzSpan="3"nzOffset="7"><nz-form-item>
+          <nz-form-label [nzSpan]="8" nzRequired>Size_x</nz-form-label>
+          <nz-form-control [nzSpan]="7">
+            <nz-input-number [nzMin]="0" [nzStep]="1" formControlName="size_x"></nz-input-number>
+            <nz-form-explain *ngIf="dockingForm.get('size_x').dirty && dockingForm.get('size_x').hasError('required')">
+              请输入x方向大小！
+            </nz-form-explain>
+            <!-- <span>x方向大小</span> -->
+          </nz-form-control>
+        </nz-form-item></div>
+        <div nz-col nzSpan="3"nzOffset="0"><nz-form-item>
+          <nz-form-label [nzSpan]="8" nzRequired>Size_y</nz-form-label>
+          <nz-form-control [nzSpan]="7">
+            <nz-input-number [nzMin]="0" [nzStep]="1" formControlName="size_y"></nz-input-number>
+            <nz-form-explain *ngIf="dockingForm.get('size_y').dirty && dockingForm.get('size_y').hasError('required')">
+              请输入y方向大小！
+            </nz-form-explain>
+            <!-- <span>y方向大小</span> -->
+          </nz-form-control>
+        </nz-form-item></div>
+        <div nz-col nzSpan="3"nzOffset="0"><nz-form-item>
+      <nz-form-label [nzSpan]="8" nzRequired>Size_z</nz-form-label>
+      <nz-form-control [nzSpan]="7">
+        <nz-input-number [nzMin]="0" [nzStep]="1" formControlName="size_z"></nz-input-number>
+        <nz-form-explain *ngIf="dockingForm.get('size_z').dirty && dockingForm.get('size_z').hasError('required')">
+          请输入z方向大小！
+        </nz-form-explain>
+        <!-- <span>z方向大小</span> -->
+      </nz-form-control>
+    </nz-form-item></div>
+      </div>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8">中心坐标</nz-form-label>
+      </nz-form-item>
+      <div nz-row >
+        <div nz-col nzSpan="3"nzOffset="7">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>x</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <nz-input-number [nzStep]="0.001" formControlName="center_x"></nz-input-number>
+          <nz-form-explain *ngIf="dockingForm.get('center_x').dirty && dockingForm.get('center_x').hasError('required')">
+            请输入中心x坐标大小！
+          </nz-form-explain>
+          <!-- <span>中心x坐标</span> -->
+        </nz-form-control>
+      </nz-form-item>
+      </div>
+      <div nz-col nzSpan="3"nzOffset="0">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>y</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <nz-input-number [nzStep]="0.001" formControlName="center_y"></nz-input-number>
+          <nz-form-explain *ngIf="dockingForm.get('center_y').dirty && dockingForm.get('center_y').hasError('required')">
+            请输入中心z坐标大小！
+          </nz-form-explain>
+          <!-- <span>中心y坐标</span> -->
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  
+      <div nz-col nzSpan="3"nzOffset="0">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>z</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <nz-input-number  [nzStep]="0.001" formControlName="center_z"></nz-input-number>
+          <nz-form-explain *ngIf="dockingForm.get('center_z').dirty && dockingForm.get('center_z').hasError('required')">
+            请输入中心z坐标大小！
+          </nz-form-explain>
+          <!-- <span>中心z坐标</span> -->
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+  <!-- <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>Docking algorithm</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <nz-radio-group [(ngModel)]="radioValue"  formControlName="algorithm">
+        <label nz-radio nzValue="A">Autodock</label>
+        <label nz-radio nzValue="AutoDock-vina">Autodock-vina</label>
+        <label nz-radio nzValue="C">Glide</label>
+      </nz-radio-group>
+
+      <nz-form-explain *ngIf="dockingForm.get('center_z').dirty && dockingForm.get('center_z').hasError('required')">
+        请输入中心z坐标大小！
+      </nz-form-explain>
+       <span>中心z坐标</span> 
+    </nz-form-control>
+  </nz-form-item> -->
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>受体文件</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <input type="file"
+                 accept=".pdb"
+                 (change)="pdbTargetFileChange($event)"
+                 formControlName="pdbFile"
+          >
+          <span>&nbsp;请上传pdb格式的文件！</span>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="8" nzRequired>配体文件</nz-form-label>
+        <nz-form-control [nzSpan]="7">
+          <input type="file"
+                 accept=".mol2"
+                 (change)="mol2FileChange($event)"
+                 formControlName="ligFile"
+          >
+          <span>&nbsp;请上传mol2格式的文件！</span>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control [nzSpan]="7" [nzOffset]="8">
+          <button nz-button [nzType]="'primary'" type="submit">提交任务</button>
+        </nz-form-control>
+      </nz-form-item>
+      <!-- </div> -->
+      <!-- <div nz-col nzSpan="12"> -->
+        <!-- <app-jsme [elementId]="'structure-search'"
+        [width]="'95%'"
+        [height]="'400px'"
+        [showDemo]="true"
+>loading JSME widget
+</app-jsme> -->
+      <!-- </div>
+    </div> -->
+    </form>
+  </nz-tab>
+  <nz-tab nzTitle="Docking2">
+    <app-online-docking2></app-online-docking2>
+  </nz-tab>
+  <nz-tab nzTitle="Docking3">
+    <app-online-docking3></app-online-docking3>
+  </nz-tab>
+</nz-tabset>

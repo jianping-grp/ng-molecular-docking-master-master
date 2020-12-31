@@ -1,0 +1,120 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <div class="navbar-header">
+              <a class="navbar-brand"  routerLink="home">首页</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a  routerLink='docking/docking-home/docking'>分子对接</a></li>
+                <!-- <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SEA<span class="caret"></span></a>
+                  <ul class="dropdown-menu"> -->
+                    <li><a  routerLink="docking/docking-home/screening2">虚拟筛选</a></li>
+                    <li><a  routerLink="docking/docking-home/screening">靶点预测</a></li>
+                    <!-- <li><a href="#"></a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#"></a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">One more separated link</a></li> -->
+                  <!-- </ul> -->
+                <!-- </li> -->
+                <!-- <li><a  routerLink='docking/docking-home/docking-document'>MM-GBSA</a></li> -->
+                <li><a  routerLink='docking/docking-home/docking-platform-introduction'>关于我们</a></li>
+              </ul>
+
+              <!-- <form class="navbar-form navbar-left">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search"/>
+                      </div>
+                      <button type="submit" class="btn btn-default" aria-label="Left Align"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </form> -->
+                   
+              <ul class="nav navbar-nav navbar-right" >
+
+                <app-user></app-user>
+              </ul>
+            </div>
+          </div>
+</nav>
+<router-outlet></router-outlet>
+<!-- <mat-toolbar color="accent">
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span>
+    <h3>计算筛选信息平台</h3>
+  </span>&nbsp;&nbsp;
+  <button mat-button routerLink="home">首页</button>
+  <button mat-button [matMenuTriggerFor]="online">在线产品</button>
+    <mat-menu #online="matMenu">
+      <button mat-menu-item routerLink="docking/docking-home">分子对接</button>
+      <button mat-menu-item routerLink="screening/screening-home">虚拟筛选</button>
+    </mat-menu>
+  <button mat-button>服务与解决方案</button>
+  <button mat-button>关于我们</button>
+  <span class="toolbar-span"></span>
+  <app-user></app-user>
+</mat-toolbar>
+<router-outlet></router-outlet> -->
+<!--<nz-layout class="layout">-->
+  <!--<nz-header>-->
+    <!--&lt;!&ndash;<div class="logo"></div>&ndash;&gt;-->
+    <!--<ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">-->
+      <!--<li nz-menu-item>首页</li>-->
+      <!--<li nz-submenu>-->
+        <!--<span title>在线产品</span>-->
+        <!--<ul>-->
+          <!--<li nz-menu-item routerLink="/docking/online-docking">-->
+            <!--&lt;!&ndash;<a routerLink="/docking/online-docking">分子对接</a>&ndash;&gt;-->
+            <!--分子对接-->
+          <!--</li>-->
+          <!--<li nz-menu-item>虚拟筛选</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+      <!--<li nz-menu-item>服务与解决方案</li>-->
+      <!--<li nz-menu-item>技术支持</li>-->
+      <!--<li nz-menu-item>关于我们</li>-->
+    <!--</ul>-->
+  <!--</nz-header>-->
+    <!--<nz-layout style="padding:24px 0; background: #fff">-->
+      <!--<nz-sider [nzWidth]="200" style="background:#fff">-->
+        <!--<ul nz-menu [nzMode]="'inline'" style="height:100%">-->
+          <!--<li nz-submenu>-->
+            <!--<span title><i nz-icon type="user"></i>subnav 1</span>-->
+            <!--<ul>-->
+              <!--<li nz-menu-item>option1</li>-->
+              <!--<li nz-menu-item>option2</li>-->
+              <!--<li nz-menu-item>option3</li>-->
+              <!--<li nz-menu-item>option4</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <!--<li nz-submenu>-->
+            <!--<span title><i nz-icon type="laptop"></i>subnav 2</span>-->
+            <!--<ul>-->
+              <!--<li nz-menu-item>option5</li>-->
+              <!--<li nz-menu-item>option6</li>-->
+              <!--<li nz-menu-item>option7</li>-->
+              <!--<li nz-menu-item>option8</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <!--<li nz-submenu>-->
+            <!--<span title><i nz-icon type="notification"></i>subnav 3</span>-->
+            <!--<ul>-->
+              <!--<li nz-menu-item>option9</li>-->
+              <!--<li nz-menu-item>option10</li>-->
+              <!--<li nz-menu-item>option11</li>-->
+              <!--<li nz-menu-item>option12</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</nz-sider>-->
+    <!--</nz-layout>-->
+    <!--<nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>-->
+  <!---->
+<!--</nz-layout>-->
+<!--<app-litemol [targetId]="'protein'"-->
+             <!--[elementId]="'enzyme'"-->
+             <!--[url]="reNumProteinUrl"-->
+             <!--[width]="'480px'"-->
+             <!--[height]="'480px'"-->
+<!--&gt;</app-litemol>-->
+
+

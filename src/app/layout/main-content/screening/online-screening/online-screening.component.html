@@ -1,0 +1,72 @@
+<!-- <nz-tabset>
+  <nz-tab nzTitle="Screening1"> -->
+<br/><br/><br/>
+<div nz-row>
+  <div nz-col nzSpan="8" nzOffset="1">      
+      <app-jsme [elementId]="'structure-search'"
+      [width]="'85%'"
+      [height]="'450px'"
+      [showDemo]="true">loading JSME widget
+      </app-jsme>
+     <br/>
+  </div>
+  <div nz-col nzSpan="3">
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <button mat-raised-button color="accent" (click)="getJsmeSmiles()">
+      Get Smiles
+    </button>
+    <button mat-icon-button (click)="getJsmeSmiles()" color="warn">
+      <mat-icon>trending_flat</mat-icon>
+    </button>
+  </div>
+  <div nz-col nzSpan="12">
+    <br/><br/>
+      <form nz-form class="form" (click)="openTooltip()" [formGroup]="screeningForm" (submit)="onSubmit()">
+        <div nz-row>
+          <div nz-col nzSpan="12">
+            <nz-form-item>
+              <nz-form-label [nzSpan]="8" nzRequired>任务名</nz-form-label>
+              <nz-form-control [nzSpan]="16">
+                <input nz-input formControlName="work_name" placeholder="target production task">
+                <nz-form-explain *ngIf="screeningForm.get('work_name').dirty && screeningForm.get('work_name').errors || screeningForm.get('work_name').pending">
+                  请输入任务名称！
+                </nz-form-explain>
+              </nz-form-control>
+              <nz-form-control [nzSpan]="4">
+              </nz-form-control>
+            </nz-form-item>
+            <br/>
+            <nz-form-item>
+              <nz-form-label [nzSpan]="8"nzRequired>电子邮箱</nz-form-label>
+              <nz-form-control [nzSpan]="16">
+                <input nz-input  formControlName="work_decs" placeholder="xxxx@sina.com">
+                <nz-form-explain *ngIf="screeningForm.get('work_decs').dirty&&screeningForm.get('work_decs').hasError('required')">
+                  xxxx@sina.com
+                </nz-form-explain>
+              </nz-form-control>
+            </nz-form-item>
+            <br/>
+            <nz-form-item> 
+              <nz-form-label [nzSpan]="8" nzRequired>smiles</nz-form-label>
+              <nz-form-control [nzSpan]="16">
+                <input nz-input formControlName="smiles" placeholder="CNCC(O)c1ccc(OC(=O)C(C)(C)C)c(OC(=O)C(C)(C)C)c1" [value]="jsmeSmiles" >
+              </nz-form-control>
+            </nz-form-item>
+            <br/><br/>
+            <nz-form-item> 
+              <nz-form-control [nzSpan]="8" ></nz-form-control>
+              <nz-form-control [nzSpan]="7">
+                <button nz-button [nzType]="'primary'" [nzSize]="'large'" type="submit">提交任务</button> 
+              </nz-form-control>
+            </nz-form-item>
+        </div> 
+      </div> 
+   </form>
+  </div>
+</div>
+ <!-- </nz-tab>
+
+  <nz-tab nzTitle="Screening2">
+    <app-online-screening2></app-online-screening2>
+  </nz-tab>
+</nz-tabset> -->

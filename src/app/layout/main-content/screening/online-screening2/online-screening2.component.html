@@ -1,0 +1,77 @@
+<br/><br/><br/>
+<form nz-form class="form" (click)="openTooltip()" [formGroup]="screeningForm2" (submit)="onSubmit()">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>任务名称</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <input nz-input formControlName="work_name" placeholder="请输入任务名称">
+      <nz-form-explain *ngIf="screeningForm2.get('work_name').dirty && screeningForm2.get('work_name').errors || screeningForm2.get('work_name').pending">
+        请输入任务名称！
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>电子邮箱:</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <input nz-input  formControlName="work_decs" placeholder="xxxx@sina.com">
+      <nz-form-explain *ngIf="screeningForm2.get('work_decs').dirty&&screeningForm2.get('work_decs').hasError('required')">
+        xxxx@sina.com
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>数据库</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <nz-select formControlName="mol_db">
+        <nz-option nzLabel="ZINC" nzValue="zinc"></nz-option> 
+        <nz-option nzLabel="CHEMBL" nzValue="chembl"></nz-option>
+        <nz-option nzLabel="DrugBank" nzValue="drugbank"></nz-option>
+        <nz-option nzLabel="中药" nzValue="chinese-medicine"></nz-option>
+        <nz-option nzLabel="桃素" nzValue="taosu"></nz-option>
+        <nz-option nzLabel="百灵威" nzValue="bailingwei"></nz-option>
+        <nz-option nzLabel="剑桥分子晶体" nzValue="jianqiao"></nz-option>
+      </nz-select>
+      <nz-form-explain></nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>靶点选择</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <nz-select formControlName="target_select">
+        <nz-option *ngFor="let target of seaTargets"
+                   [nzLabel]="target.target"
+                   [nzValue]="target.target"
+        ></nz-option> </nz-select>
+      <nz-form-explain></nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>受体文件</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <input type="file"
+             accept=".pdb"
+             (change)="targetFileChange($event)"
+      >
+      <!--<nz-form-explain *ngIf="dockingForm.get('pdbFile').dirty && dockingForm.get('pdbFile').hasError('required')">-->
+      <!--请上传蛋白质文件！-->
+      <!--</nz-form-explain>-->
+      <span>&nbsp;请上传pdb格式的文件！</span>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="8" nzRequired>关键残基位点</nz-form-label>
+    <nz-form-control [nzSpan]="7">
+      <input nz-input  formControlName="resn" placeholder="xxxx@sina.com">
+      <p>如果需要输入多个残基位点，请用分号隔开</p>
+      <!-- <nz-form-explain *ngIf="screeningForm2.get('work_decs').dirty&&screeningForm2.get('work_decs').hasError('required')">
+        xxxx@sina.com
+      </nz-form-explain> -->
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="7" [nzOffset]="8">
+      <button nz-button [nzType]="'primary'">提交任务</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
